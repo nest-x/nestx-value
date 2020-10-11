@@ -1,6 +1,1 @@
-import { Module } from '@nestjs/common';
-
-
-@Module({})
-export class ValueModule {
-}
+export * from './value.module';
