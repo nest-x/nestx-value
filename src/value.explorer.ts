@@ -1,6 +1,6 @@
 import { Injectable, Logger, OnModuleInit } from '@nestjs/common';
 import { DiscoveryService, MetadataScanner, ModuleRef } from '@nestjs/core';
-import { VALUE_TOKEN } from './value.constants';
+import { PROPERTY_SOURCE_TOKEN, VALUE_TOKEN } from './value.constants';
 
 @Injectable()
 export class ValueExplorer implements OnModuleInit {
@@ -15,18 +15,27 @@ export class ValueExplorer implements OnModuleInit {
   }
 
   onModuleInit(): any {
-    this.registerValueDecorators();
+    this.registerPropertySourceAndValueDecorators();
   }
 
-  registerValueDecorators() {
+  registerPropertySourceAndValueDecorators() {
     const providers = this.discoveryService.getProviders();
-    const providersWithValueDecorators = providers
+    const providersWithDecorators = providers
       .filter((provider) => provider && provider.metatype)
       .filter((provider) => {
-        const isKeyUndefined = Reflect.getMetadata(VALUE_TOKEN, provider.metatype) === undefined;
-        return !isKeyUndefined;
+        const isPropertySourceUndefined = Reflect.getMetadata(PROPERTY_SOURCE_TOKEN, provider.metatype) === undefined;
+        return !isPropertySourceUndefined;
       });
 
-    this.logger.log(`Discovered ${providersWithValueDecorators.length} providers`);
+    for(const provider of providersWithDecorators){
+      const propertySourceName = Reflect.getMetadata(PROPERTY_SOURCE_TOKEN, provider);
+      // const injectPropertySourceToken
+
+    }
+
+
+    this.logger.log(`Discovered ${providersWithDecorators.length} providers`);
   }
+
+
 }
