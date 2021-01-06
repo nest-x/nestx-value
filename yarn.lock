@@ -3474,10 +3474,10 @@ eslint-config-prettier@6.12.0:
   dependencies:
     get-stdin "^6.0.0"
 
-eslint-config-ts-lambdas@1.2.0:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-ts-lambdas/-/eslint-config-ts-lambdas-1.2.0.tgz#cf587490b80e6d4cb2d3e07c74716b5aa0663df2"
-  integrity sha512-unh9KErDxIXuh9f34m3VSGC7v3/N4Ai43a1YOd5h1s8w5XkjTmplwExF9pa8ep8QS0akWLKyTIb4QN23r0PfGw==
+eslint-config-ts-lambdas@1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/eslint-config-ts-lambdas/-/eslint-config-ts-lambdas-1.2.1.tgz#646dd90ea7c023e197cc95d4362a78dfab489301"
+  integrity sha512-gNwNUEWFZZ0+IcucLDCKuf7ncC0UaeZjdVG9ey4HuPpGqc2dAJzLap5cCwLIit7RO9lUrlNR0hZ5KggaVuJs8A==
 
 eslint-import-resolver-node@^0.3.4:
   version "0.3.4"
